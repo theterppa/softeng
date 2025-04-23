@@ -15,7 +15,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
     // Validate credentials
     if (username === testUser.username && password === testUser.password) {
         // Redirect to main.html
-        window.location.href = "../main.html";
+        window.location.href = "../main/main.html";
     } else {
         alert("Invalid username or password.");
     }

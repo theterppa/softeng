@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Main page</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="tournament-container">
+            <h1>Create a New Tournament Plan</h1>
+            <form id="tournament-form">
+                <label for="title">Tournament Title:</label>
+                <input type="text" id="title" name="title" placeholder="Enter tournament title" required>
+
+                <label for="date">Tournament Date:</label>
+                <input type="date" id="date" name="date">
+
+                <label for="game-mode">Game Mode:</label>
+                <select id="game-mode" name="game-mode" required>
+                    <option value="cup">Cup</option>
+                    <option value="pool">Pool</option>
+                </select>
+
+                <label for="fields">Number of Fields:</label>
+                <input type="number" id="fields" name="fields" min="1" placeholder="Enter number of fields" required>
+
+                <label for="players">Players (Optional):</label>
+                <textarea id="players" name="players" placeholder="Enter player names, one per line"></textarea>
+
+                <button type="submit">Generate Tournament</button>
+            </form>
+
+            <div id="tournament-output" class="output-container"></div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
