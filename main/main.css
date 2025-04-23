@@ -1,0 +1,68 @@
+/* Tournament container styling */
+
+body {
+    background-color: #f4f4f9;
+}
+
+.tournament-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+.tournament-container h1 {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+    
+}
+
+form input, form select, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+.output-container {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.output-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.output-container ul li {
+    margin: 5px 0;
+}
+
+
