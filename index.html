@@ -1,14 +1,133 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Tournament planning tool</title>
-        <link rel="stylesheet" href="index.css" />
-    </head>
-    <body>
-        <div class="login-container">
-            <h1>Welcome!</h1>
-            <a href="login/login.html" class="button-link">Login</a>
-            <a class="button-link">Register</a>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tournament Schedule 2025</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-trophy"></i> Tournament Schedule 2025</h1>
+  </header>
+
+  <div class="bracket-container">
+    <!-- Left bracket (Quarterfinals) -->
+    <div class="bracket-side left-side">
+      <div class="round-label">Quarterfinals</div>
+      <div class="match" data-match="1">
+        <span class="team-name">Team 1</span>
+        <span class="team-name">Team 2</span>
+      </div>
+      <div class="match" data-match="2">
+        <span class="team-name">Team 3</span>
+        <span class="team-name">Team 4</span>
+      </div>
+      <div class="match" data-match="3">
+        <span class="team-name">Team 5</span>
+        <span class="team-name">Team 6</span>
+      </div>
+      <div class="match" data-match="4">
+        <span class="team-name">Team 7</span>
+        <span class="team-name">Team 8</span>
+      </div>
+    </div>
+
+    <!-- Champion (center) -->
+    <div class="champion-area">
+      <div class="trophy-icon">
+        <img src="xmY7h0bE1nnWKAchhaVjm0re8Ws.png" alt="Tournament Schedule" />
+      </div>
+      <h2>CHAMPION</h2>
+      <div class="winner-placeholder">TBD</div>
+    </div>
+
+    <!-- Right bracket (Semifinals & Final) -->
+    <div class="bracket-side right-side">
+      <div class="round-label">Semifinals</div>
+      <div class="match" data-match="5">
+        <span class="team-name">Team 1</span>
+        <span class="team-name">Team 4</span>
+      </div>
+      <div class="match" data-match="6">
+        <span class="team-name">Team 5</span>
+        <span class="team-name">Team 7</span>
+      </div>
+      <div class="round-label">Final</div>
+      <div class="match final-match" data-match="7">
+        <span class="team-name">Team 1</span>
+        <span class="team-name">Team 5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Groups Section -->
+  <!-- <div class="groups-container">
+    <h2>Group Stage</h2>
+    <div class="groups-grid">
+      <div class="group">
+        <h3>Group A</h3>
+        <ul>
+          <li>Team 1</li>
+          <li>Team 2</li>
+          <li>Team 7</li>
+          <li>Team 8</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Group B</h3>
+        <ul>
+          <li>Team 3</li>
+          <li>Team 4</li>
+          <li>Team 5</li>
+          <li>Team 6</li>
+        </ul>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Schedule Section -->
+  <div class="schedule-container">
+    <h2>Event Schedule</h2>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Stage</th>
+        <th>Match</th>
+      </tr>
+      <tr>
+        <td>June 15</td>
+        <td>10:00 AM</td>
+        <td>Group Stage</td>
+        <td>All Group Matches</td>
+      </tr>
+      <tr>
+        <td>June 16</td>
+        <td>12:00 PM</td>
+        <td>Quarterfinals</td>
+        <td>All Quarterfinal Matches</td>
+      </tr>
+      <tr>
+        <td>June 17</td>
+        <td>2:00 PM</td>
+        <td>Semifinals</td>
+        <td>Semifinal 1 & 2</td>
+      </tr>
+      <tr>
+        <td>June 18</td>
+        <td>6:00 PM</td>
+        <td>Grand Final</td>
+        <td>Championship Match</td>
+      </tr>
+    </table>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Tournament Schedule. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
 </html>
