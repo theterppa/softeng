@@ -1,4 +1,4 @@
-/* Tournament container styling */
+/* Main page styling */
 
 body {
     background-color: #f4f4f9;
@@ -65,4 +65,39 @@ form button:hover {
     margin: 5px 0;
 }
 
+.own-plans-container {
+    margin-top: 20px;
+    text-align: left;
+}
+.own-plans-container ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Spacing between plans */
+}
+.own-plans-container li {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.own-plans-container li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
 
+.plan-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.plan-details {
+    font-size: 14px;
+    color: #6c757d;
+    margin-top: 8px;
+}
