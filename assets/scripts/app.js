@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Check if the user is logged in
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    // Redirect to login page if not logged in
+    window.location.href = "../login/login.html";
+    return;
+}
     // Select all matches
     const matches = document.querySelectorAll('.match');
     
