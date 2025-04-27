@@ -2,7 +2,13 @@
 <html>
     <head>
         <title>Main page</title>
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="../assets/styles/main.css">
+        <script>
+            // Redirect to login page if the user is not logged in
+            if (localStorage.getItem("isLoggedIn") !== "true") {
+              window.location.href = "../login/login.html";
+            }
+          </script>
     </head>
     <body>
         <div class="tournament-container">
@@ -26,11 +32,27 @@
                 <label for="players">Players (Optional):</label>
                 <textarea id="players" name="players" placeholder="Enter player names, one per line"></textarea>
 
-                <button type="submit">Generate Tournament</button>
+                <button type="submit">Generate Tournament T</button>
+    
             </form>
-
             <div id="tournament-output" class="output-container"></div>
         </div>
-        <script src="main.js"></script>
+       <div class="own-plans-container">
+            <h2>Your Tournament Plans</h2>
+            <ul id="own-plan-list"></ul>
+            <button id="reset-plans-button">Reset Test Plans</button>
+       </div>
+        <script src="../assets/scripts/main.js"></script>
+            <main>
+                <button id="generate-tournament" class="generate-button">Generate Tournament K</button>
+            </main>
+            <script>
+                // Redirect to index.html when the button is clicked
+                document.getElementById("generate-tournament").addEventListener("click", function () {
+                  window.location.href = "../index.html";
+                });
+              </script>
+         
+       
     </body>
 </html>
