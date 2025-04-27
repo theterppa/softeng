@@ -2,15 +2,20 @@
 
 body {
     background-color: #f4f4f9;
+    margin: 0;
+    font-family: Poppins, sans-serif;
 }
 
+.tournament-container, .own-plans-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+}
 .tournament-container {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    margin: 20px auto;
     text-align: center;
     box-sizing: border-box;
 }
@@ -66,8 +71,13 @@ form button:hover {
 }
 
 .own-plans-container {
-    margin-top: 20px;
-    text-align: left;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-top: #007BFF 4px solid;
 }
 .own-plans-container ul {
     list-style-type: none;
@@ -83,21 +93,46 @@ form button:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: row;
+    gap: 8px; /* Spacing between title and details */
+    position: relative;
 }
 .own-plans-container li:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .plan-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #2c3e50;
+    font-size: 20px;
+    font-weight: 700;
+    color: #007BFF;
     margin: 0;
 }
-
-.plan-details {
-    font-size: 14px;
+.plan-meta {
+    font-size: 12px;
     color: #6c757d;
-    margin-top: 8px;
+   
+}
+
+.missing-info { 
+    background-color: #f8d7da; 
+    color: #721c24; 
+    font-weight: bold; 
+    font-size: 0.9em; 
+    padding: 5px 10px; 
+    border-radius: 12px; 
+    border: 1px solid #f5c6cb;
+    max-width: fit-content;
+    white-space: nowrap;
+}
+.empty-state {
+    text-align: center;
+    color: #666;
+    font-size: 1em;
+    font-style: italic;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
 }
