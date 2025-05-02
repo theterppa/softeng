@@ -9,7 +9,7 @@
   <script>
     // Redirect to login page if the user is not logged in
     if (localStorage.getItem("isLoggedIn") !== "true") {
-      window.location.href = "login/login.html";
+      window.location.href = "../login/login.html";
     }
 
   </script>
@@ -35,7 +35,7 @@
   <script src="../assets/scripts/details.js"></script>
   <script>
     document.getElementById("back-button").addEventListener("click", () => {
-      window.location.href = "main.html"; // Redirect back to the main page
+      window.location.href = "../index.html"; // Redirect back to the main page
     });
   </script>
 </body>

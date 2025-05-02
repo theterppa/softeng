@@ -2,12 +2,12 @@
 <html>
     <head>
         <title>Main page</title>
-        <link rel="stylesheet" href="../assets/styles/main.css">
+        <link rel="stylesheet" href="assets/styles/index.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
         <script>
             // Redirect to login page if the user is not logged in
             if (localStorage.getItem("isLoggedIn") !== "true") {
-              window.location.href = "../login/login.html";
+              window.location.href = "login/login.html";
             }
           </script>
     </head>
@@ -45,22 +45,17 @@
             <button id="reset-plans-button">Reset Test Plans</button> 
            
        </div>
-        <script src="../assets/scripts/main.js"></script>
+        <script src="assets/scripts/index.js"></script>
         <main>
             <button id="generate-tournament" class="generate-button">Generate Tournament K</button>
         </main>
         <script>
             // Redirect to details.html when the button is clicked
             document.getElementById("generate-tournament").addEventListener("click", function () {
-                window.location.href = "details.html";
+                window.location.href = "pages/details.html";
             });
 
-            li.addEventListener("click", () => {
-                // Save the selected plan to localStorage
-                localStorage.setItem("selectedTournamentPlan", JSON.stringify(plan));
-                // Redirect to details.html
-                window.location.href = "details.html";
-            });
+            
         </script>
          
        

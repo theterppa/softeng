@@ -15,7 +15,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
     // Validate credentials
     if (username === testUser.username && password === testUser.password) {
         localStorage.setItem("isLoggedIn", "true"); // Store login status
-        window.location.href = "../pages/main.html"; // Redirect to main page
+        window.location.href = "../index.html"; // Redirect to main page
     } else {
         alert("Invalid username or password.");
     }
