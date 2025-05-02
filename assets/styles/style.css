@@ -296,3 +296,108 @@
       padding: 0.8rem 0.5rem;
     }
   }
+
+  /* Tournament Details Section */
+.tournament-details {
+  background: rgba(27, 47, 87, 0.7);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.tournament-details h2 {
+  color: #f9c74f;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.tournament-details p {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.tournament-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.tournament-details ul li {
+  background: #1b2f57;
+  border: 1px solid #2951a3;
+  border-radius: 6px;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Back Button */
+#back-button {
+  background: #f9c74f;
+  color: #0e1d37;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+#back-button:hover {
+  background: #e0b94a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Warning for Missing Information */
+.missing-info {
+  position: relative;
+  background-color: #f8d7da;
+  color: #721c24;
+  font-weight: bold;
+  font-size: 0.8rem; /* Slightly smaller font size */
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem; /* Circle size */
+  height: 1.5rem; /* Circle size */
+  border-radius: 50%; /* Makes it a circle */
+  border: 1px solid #f5c6cb;
+  margin-left: 0.5rem;
+  text-align: center;
+}
+
+/* Tooltip Styling */
+.tooltip {
+  visibility: hidden;
+  background-color: #f8d7da;
+  color: #721c24;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #f5c6cb;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the element */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.missing-info:hover .tooltip {
+  visibility: visible;
+}

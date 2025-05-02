@@ -46,15 +46,22 @@
            
        </div>
         <script src="../assets/scripts/main.js"></script>
-            <main>
-                <button id="generate-tournament" class="generate-button">Generate Tournament K</button>
-            </main>
-            <script>
-                // Redirect to index.html when the button is clicked
-                document.getElementById("generate-tournament").addEventListener("click", function () {
-                  window.location.href = "../index.html";
-                });
-              </script>
+        <main>
+            <button id="generate-tournament" class="generate-button">Generate Tournament K</button>
+        </main>
+        <script>
+            // Redirect to details.html when the button is clicked
+            document.getElementById("generate-tournament").addEventListener("click", function () {
+                window.location.href = "details.html";
+            });
+
+            li.addEventListener("click", () => {
+                // Save the selected plan to localStorage
+                localStorage.setItem("selectedTournamentPlan", JSON.stringify(plan));
+                // Redirect to details.html
+                window.location.href = "details.html";
+            });
+        </script>
          
        
     </body>
