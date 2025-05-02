@@ -45,7 +45,7 @@ function loadPlans() {
         `;
         li.addEventListener("click", () => {
             // Redirect to detail view with the plan index
-            window.location.href = `details.html?planId=${index}`;
+            window.location.href = `pages/details.html?planId=${index}`;
         });
         planList.appendChild(li);
     });
