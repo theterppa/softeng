@@ -15,6 +15,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
     // Validate credentials
     if (username === testUser.username && password === testUser.password) {
         localStorage.setItem("isLoggedIn", "true"); // Store login status
+		localStorage.setItem("username", username);// 新增：存储用户名
         window.location.href = "../pages/main.html"; // Redirect to main page
     } else {
         alert("Invalid username or password.");

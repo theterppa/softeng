@@ -45,7 +45,7 @@ function loadPlans() {
         `;
         li.addEventListener("click", () => {
             // Redirect to detail view with the plan index
-            window.location.href = `details.html?planId=${index}`;
+            window.location.href = `pages/details.html?planId=${index}`;
         });
         planList.appendChild(li);
     });
@@ -58,28 +58,8 @@ function resetTestPlans() {
     alert("All plans have been cleared.");
 }
 
-// 登出功能
-document.getElementById("logout-btn").addEventListener("click", function() {
-    if (confirm("Are you sure you want to logout?")) {
-        localStorage.removeItem("isLoggedIn");
-        window.location.href = "../login/login.html";
-    }
-});
 
-// 在页面加载时显示用户名
-document.addEventListener("DOMContentLoaded", function() {
-    // 从localStorage获取用户名（假设存储在"username"键中）
-    const username = localStorage.getItem("username") || "User";
-    document.getElementById("username-display").textContent = username;
-    
-    // 登出功能保持不变
-    document.getElementById("logout-btn").addEventListener("click", function() {
-        if (confirm("Are you sure you want to logout?")) {
-            localStorage.removeItem("isLoggedIn");
-            window.location.href = "../login/login.html";
-        }
-    });
-});
+
 
 // Form submission handler
 document.getElementById("tournament-form").addEventListener("submit", function (event) {

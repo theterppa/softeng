@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\assets",
+    "\\assets\\scripts",
+    "\\assets\\styles",
+    "\\login",
+    "\\logout",
+    "\\pages"
+  ],
+  "SelectedNode": "\\logout\\logout.css",
+  "PreviewInSolutionExplorer": false
+}
