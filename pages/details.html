@@ -6,12 +6,13 @@
   <title>Tournament Details</title>
   <link rel="stylesheet" href="../assets/styles/style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="../assets/styles/printExport.css"/>
+  
   <script>
     // Redirect to login page if the user is not logged in
     if (localStorage.getItem("isLoggedIn") !== "true") {
       window.location.href = "../login/login.html";
     }
-
   </script>
 </head>
 <body>
@@ -26,13 +27,59 @@
     <h3>Players</h3>
     <ul id="tournament-players"></ul>
   </div>
-  <button id="back-button">Back to Plans</button>
+  <!-- Buttons -->
+<button id="back-button">Back to Plans</button>
+<button id="print-export-btn">Print & PDF</button>
+
+  <!-- Modal for Info selection -->
+<div id="info-selection-modal" class="modal">
+  <div class="modal-content">
+    <h2>Select to Print or download PDF</h2>
+    <div class="content-picker">
+      <h3>Select Content</h3>
+      <form id="print-options-form">
+        <label><input type="checkbox" name="includeTitle" checked> Title</label><br>
+        <label><input type="checkbox" name="includeDate" checked> Date</label><br>
+        <label><input type="checkbox" name="includeChart"> Tournament Chart</label><br>
+        <label><input type="checkbox" name="includePlayerPaymentStatus"> Payment Status</label><br>
+        <label><input type="checkbox" name="includePlayerNames"> Player Names</label><br>
+        <label><input type="checkbox" name="includeSchedule"> Schedule</label><br>
+        <a href="#" id="select-all">Select All</a> | <a href="#" id="clear-all">Clear</a>
+      </form>
+    </div>
+    <!-- Live Preview -->
+    <div class="preview-thumbnail">
+      <h3>Preview</h3>
+      <div id="live-preview">[Live Preview Placeholder]</div>
+    </div>
+
+    <div class="footer-actions">
+      <button id="confirm-print-export">Next</button>
+      <button id="cancel-print-export">Cancel</button>
+    </div>
+  </div>
+</div>
+ 
+  <!-- Modal for Print Preview -->
+<div id="print-preview-modal" class="modal">
+  <div class="modal-content">
+    <h2>Print Preview</h2>
+    <div id="print-preview-content">
+      <!-- Dynamically generated preview content will go here -->
+    </div>
+    <div class="footer-actions">
+      <button id="print-now-btn">Print</button>
+      <button id="close-preview-btn">Close</button>
+    </div>
+  </div>
+</div>  
 
   <footer>
     <p>&copy; 2025 Tournament Schedule. All rights reserved.</p>
   </footer>
 
   <script src="../assets/scripts/details.js"></script>
+  <script src="../assets/scripts/printExport.js"></script>
   <script>
     document.getElementById("back-button").addEventListener("click", () => {
       window.location.href = "../index.html"; // Redirect back to the main page
