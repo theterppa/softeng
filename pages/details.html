@@ -6,6 +6,7 @@
   <title>Tournament Details</title>
   <link rel="stylesheet" href="../assets/styles/style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     // Redirect to login page if the user is not logged in
     if (localStorage.getItem("isLoggedIn") !== "true") {
@@ -23,8 +24,42 @@
     <h2 id="tournament-title">Tournament Title</h2>
     <p id="tournament-date">Date: TBD</p>
     <p id="tournament-game-mode">Game Mode: TBD</p>
+    <p id="tournament-fields">Available Courts: TBD</p>
+    
     <h3>Players</h3>
-    <ul id="tournament-players"></ul>
+    <div class="players-container">
+      <table id="players-table">
+        <thead>
+          <tr>
+            <th>Player Name</th>
+            <th>Payment Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tournament-players"></tbody>
+      </table>
+    </div>
+
+    <h3>Court Schedule</h3>
+    <div id="court-schedule" class="schedule-container"></div>
+    
+    <div class="charts-container">
+      <div class="chart-wrapper">
+        <canvas id="playersPerFieldChart"></canvas>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="gameModeDistributionChart"></canvas>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="paymentStatusChart"></canvas>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="tournamentBracketChart"></canvas>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="courtAllocationChart"></canvas>
+      </div>
+    </div>
   </div>
   <button id="back-button">Back to Plans</button>
 
