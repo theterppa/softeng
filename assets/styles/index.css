@@ -136,3 +136,20 @@ form button:hover {
     border: 1px dashed #ccc;
     border-radius: 8px;
 }
+
+
+.delete-plan-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: auto;
+    transition: background-color 0.3s ease;
+}
+
+.delete-plan-button:hover {
+    background-color: #c82333;
+}
