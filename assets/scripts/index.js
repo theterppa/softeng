@@ -43,6 +43,23 @@ function loadPlans() {
             </div>
             ${missingInfo.join(" ")}
         `;
+
+        // Create the delete button
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "delete-plan-button";
+        deleteButton.textContent = "X";
+
+        // Add click event to delete button
+        deleteButton.addEventListener("click", (event) => {
+            event.stopPropagation(); // Prevent triggering the parent click event
+            if (confirm(`Are you sure you want to delete the plan "${plan.title}"?`)) {
+                deletePlan(index);
+            }
+        });
+
+        // Append the delete button to the list item
+        li.appendChild(deleteButton);
+        
         li.addEventListener("click", () => {
             // Redirect to detail view with the plan index
             window.location.href = `pages/details.html?planId=${index}`;
@@ -51,11 +68,12 @@ function loadPlans() {
     });
 }
 
-// Function to reset plans (clear localStorage and refresh the view)
-function resetTestPlans() {
-    localStorage.removeItem("tournamentPlans"); // Clear all plans
+// Function to delete a plan
+function deletePlan(index) {
+    const plans = JSON.parse(localStorage.getItem("tournamentPlans")) || [];
+    plans.splice(index, 1); // Remove the plan at the specified index
+    localStorage.setItem("tournamentPlans", JSON.stringify(plans)); // Save updated plans to localStorage
     loadPlans(); // Refresh the "Own Plan List View"
-    alert("All plans have been cleared.");
 }
 
 
@@ -107,12 +125,6 @@ document.getElementById("tournament-form").addEventListener("submit", function (
     dateInput.setAttribute("min", today); // Reapply minimum date
 });
 
-// Event listener for the "Reset Test Plans" button
-document.getElementById("reset-plans-button").addEventListener("click", function () {
-    if (confirm("Are you sure you want to clear all plans? This action cannot be undone.")) {
-        resetTestPlans();
-    }
-});
 
 // ==========================
 // Initial Setup
