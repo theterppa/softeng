@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tournament Details</title>
-  <link rel="stylesheet" href="../assets/styles/style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="../assets/styles/details.css"/>
   <link rel="stylesheet" href="../assets/styles/printExport.css"/>
-  
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <script>
     // Redirect to login page if the user is not logged in
     if (localStorage.getItem("isLoggedIn") !== "true") {
@@ -21,47 +20,31 @@
     <h1><i class="fas fa-trophy"></i> Tournament Details</h1>
   </header>
 
-  <div class="tournament-details">
-    <h2 id="tournament-title">Tournament Title</h2>
-    <p id="tournament-date">Date: TBD</p>
-    <p id="tournament-game-mode">Game Mode: TBD</p>
-    <p id="tournament-fields">Available Courts: TBD</p>
-    
-    <h3>Players</h3>
-    <div class="players-container">
-      <table id="players-table">
-        <thead>
-          <tr>
-            <th>Player Name</th>
-            <th>Payment Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="tournament-players"></tbody>
-      </table>
+<!-- Tournament Chart Placeholder -->
+  <section id="tournament-chart-section">
+    <h2>Tournament Chart</h2>
+    <div id="tournament-chart-placeholder">
+      <!-- Tournament chart will be generated here -->
+      <p>[Tournament chart will appear here]</p>
     </div>
+  </section>
 
-    <h3>Court Schedule</h3>
-    <div id="court-schedule" class="schedule-container"></div>
-    
-    <div class="charts-container">
-      <div class="chart-wrapper">
-        <canvas id="playersPerFieldChart"></canvas>
-      </div>
-      <div class="chart-wrapper">
-        <canvas id="gameModeDistributionChart"></canvas>
-      </div>
-      <div class="chart-wrapper">
-        <canvas id="paymentStatusChart"></canvas>
-      </div>
-      <div class="chart-wrapper">
-        <canvas id="tournamentBracketChart"></canvas>
-      </div>
-      <div class="chart-wrapper">
-        <canvas id="courtAllocationChart"></canvas>
-      </div>
-    </div>
-  </div>
+ <!-- Player List with Payment Status -->
+  <section id="player-payment-section">
+    <h2>Players & Payment Status</h2>
+    <table id="player-payment-table">
+      <thead>
+        <tr>
+          <th>Player Name</th>
+          <th>Payment Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Player rows will be dynamically inserted here -->
+      </tbody>
+    </table>
+  </section>
   <!-- Buttons -->
 <button id="back-button">Back to Plans</button>
 <button id="print-export-btn">Print & PDF</button>
@@ -115,11 +98,6 @@
 
   <script src="../assets/scripts/details.js"></script>
   <script src="../assets/scripts/printExport.js"></script>
-  <script src="../assets/scripts/app.js"></script>
-  <script>
-    document.getElementById("back-button").addEventListener("click", () => {
-      window.location.href = "../index.html"; // Redirect back to the main page
-    });
-  </script>
+
 </body>
 </html>
