@@ -6,11 +6,13 @@ body {
     font-family: Poppins, sans-serif;
 }
 
-.tournament-container, .own-plans-container {
+.tournament-container,
+.own-plans-container {
     width: 90%;
     max-width: 600px;
     margin: 20px auto;
 }
+
 .tournament-container {
     background: #fff;
     padding: 20px;
@@ -20,7 +22,9 @@ body {
     box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
@@ -36,9 +40,9 @@ form label {
 }
 
 form textarea {
-    width: 100%; 
-    max-width: 100%; 
-    min-height: 70px; 
+    width: 100%;
+    max-width: 100%;
+    min-height: 70px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -46,7 +50,10 @@ form textarea {
     resize: vertical;
 }
 
-form input, form select, form textarea, form button {
+form input,
+form select,
+form textarea,
+form button {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -89,13 +96,16 @@ form button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-top: #007BFF 4px solid;
 }
+
 .own-plans-container ul {
     list-style-type: none;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Spacing between plans */
+    gap: 16px;
+    /* Spacing between plans */
 }
+
 .own-plans-container li {
     background-color: #ffffff;
     padding: 20px;
@@ -105,9 +115,11 @@ form button:hover {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: row;
-    gap: 8px; /* Spacing between title and details */
+    gap: 8px;
+    /* Spacing between title and details */
     position: relative;
 }
+
 .own-plans-container li:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -119,23 +131,25 @@ form button:hover {
     color: #007BFF;
     margin: 0;
 }
+
 .plan-meta {
     font-size: 12px;
     color: #6c757d;
-   
+
 }
 
-.missing-info { 
-    background-color: #f8d7da; 
-    color: #721c24; 
-    font-weight: bold; 
-    font-size: 0.9em; 
-    padding: 5px 10px; 
-    border-radius: 12px; 
+.missing-info {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 12px;
     border: 1px solid #f5c6cb;
     max-width: fit-content;
     white-space: nowrap;
 }
+
 .empty-state {
     text-align: center;
     color: #666;
@@ -180,7 +194,8 @@ form button:hover {
 }
 
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -189,7 +204,8 @@ form button:hover {
     height: 100%;
     overflow: auto;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
 }
 
 .modal-content {
@@ -214,4 +230,44 @@ form button:hover {
 .close-button:focus {
     color: #000;
     text-decoration: none;
+}
+
+/* 用户控制区域样式 */
+.user-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    max-width: 400px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
 }

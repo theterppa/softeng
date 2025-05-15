@@ -14,8 +14,23 @@
 </head>
 
 <body>
+    <!-- 在页面顶部添加用户信息区域 -->
+    <header>
+        <div class="user-controls">
+            <button id="userInfoBtn" class="btn">👤 User Information</button>
+            <button id="logout-btn" class="btn">Logout</button>
+        </div>
+    </header>
+
+    <!-- 用户信息弹窗 -->
+    <div id="userInfoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>User Information</h2>
+            <div id="userInfoContent"></div>
+        </div>
+    </div>
     <div class="tournament-container">
-        <button id="logout-btn">Logout</button>
         <h1>Create a New Tournament Plan</h1>
         <form id="tournament-form">
             <label for="title">Tournament Title:</label>
