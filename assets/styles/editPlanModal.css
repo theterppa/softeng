@@ -1,0 +1,92 @@
+/* Modal Overlay */
+#edit-modal.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(40, 60, 100, 0.55);
+  align-items: center;
+  justify-content: center;
+}
+#edit-modal.modal.show {
+  display: flex;
+}
+
+/* Modal Content */
+#edit-modal .modal-content {
+  background: #2d4379;
+  color: #fff;
+  border-radius: 18px;
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  min-width: 320px;
+  max-width: 95vw;
+  width: 400px;
+  position: relative;
+  margin: auto;
+  animation: modalFadeIn 0.2s;
+}
+
+@keyframes modalFadeIn {
+  from { transform: translateY(30px) scale(0.98); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Close Button */
+#edit-modal .close-button {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 1.7rem;
+  color: #ffd54f;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+#edit-modal .close-button:hover {
+  color: #fff176;
+}
+
+/* Form Elements */
+#edit-modal form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #ffd54f;
+  letter-spacing: 0.5px;
+}
+#edit-modal form input,
+#edit-modal form select,
+#edit-modal form textarea {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border-radius: 7px;
+  border: none;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  background: #3e5fa8;
+  color: #fff;
+  outline: none;
+  box-sizing: border-box;
+}
+#edit-modal form textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+#edit-modal form button[type="submit"] {
+  margin-top: 1.2rem;
+  background: #ffd54f;
+  color: #22335a;
+  border: none;
+  border-radius: 7px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#edit-modal form button[type="submit"]:hover {
+  background: #ffe082;
+}

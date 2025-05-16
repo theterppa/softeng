@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tournament Details</title>
   <link rel="stylesheet" href="../assets/styles/details.css"/>
+  <link rel="stylesheet" href="../assets/styles/editPlanModal.css"/>
   <link rel="stylesheet" href="../assets/styles/printExport.css"/>
+  <link rel="stylesheet" href="../assets/styles/warningLabels.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <script>
@@ -19,6 +21,18 @@
   <header>
     <h1><i class="fas fa-trophy"></i> Tournament Details</h1>
   </header>
+
+<!-- Tournament information section -->
+<section id="tournament-info-section">
+  <h2 id="tournament-title"></h2>
+  <div class="tournament-meta">
+    <span id="tournament-date"></span> |
+    <span id="tournament-player-count"></span> |
+    <span id="tournament-game-mode"></span>
+  </div>
+  <div id="detail-missing-info"></div>
+  <button id="edit-tournament-btn"><i class="fas fa-edit"></i> Edit Tournament</button>
+</section>
 
 <!-- Tournament Chart Placeholder -->
   <section id="tournament-chart-section">
@@ -87,15 +101,46 @@
       <button id="close-preview-btn">Close</button>
     </div>
   </div>
-</div>  
+</div> 
+
+<!-- Edit plan modal  -->
+<div id="edit-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Edit Tournament Plan</h2>
+    <form id="edit-form">
+      <label for="edit-title">Tournament Title:</label>
+      <input type="text" id="edit-title" name="edit-title" required>
+
+      <label for="edit-date">Tournament Date:</label>
+      <input type="date" id="edit-date" name="edit-date">
+
+      <label for="edit-game-mode">Game Mode:</label>
+      <select id="edit-game-mode" name="edit-game-mode" required>
+        <option value="cup">Cup</option>
+        <option value="pool">Pool</option>
+      </select>
+
+      <label for="edit-fields">Number of Fields:</label>
+      <input type="number" id="edit-fields" name="edit-fields" min="1" required>
+
+      <label for="edit-players">Players (Optional):</label>
+      <textarea id="edit-players" name="edit-players"></textarea>
+
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
 
   <footer>
     <p>&copy; 2025 Tournament Schedule. All rights reserved.</p>
   </footer>
 
-  <script src="../assets/scripts/details.js"></script>
+  <script src="../assets/scripts/warningLabels.js"></script>
   <script src="../assets/scripts/printExport.js"></script>
   <script src="../assets/scripts/chart.js"></script>
+  <script src="../assets/scripts/editPlanModal.js"></script>
+  <script src="../assets/scripts/details.js"></script>
 
 </body>
 </html>

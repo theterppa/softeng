@@ -33,6 +33,91 @@ header h1 {
   font-size: 1.1rem;
 }
 
+/* Tournament info section */
+#tournament-info-section {
+  background: #3e5fa8;
+  color: #fff;
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  margin: 0 auto 2rem auto;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+#tournament-info-section h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.2rem;
+  color: #ffd54f;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.tournament-meta {
+  font-size: 1.15rem;
+  margin-bottom: 1.2rem;
+  color: #e0e0e0;
+  letter-spacing: 0.5px;
+}
+#tournament-info-section .meta-label {
+  color: #ffd54f;
+  font-weight: 500;
+  margin-right: 0.2em;
+}
+
+#detail-missing-info {
+  margin-bottom: 0.7rem;
+}
+.missing-info {
+  display: inline-block;
+  background-color: #f8d7da;
+  color: #721c24;
+  font-weight: bold;
+  font-size: 0.98em;
+  padding: 5px 12px;
+  border-radius: 12px;
+  border: 1px solid #f5c6cb;
+  margin: 0 6px 6px 0;
+  white-space: nowrap;
+}
+#edit-tournament-btn {
+  background: #ffd54f;
+  color: #22335a;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+#edit-tournament-btn:hover {
+  background: #e0b94a;
+}
+
+/*Tournament chart section */ 
+#tournament-chart-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto 1.5rem auto;
+  max-width: 700px;
+}
+
+#tournament-chart-placeholder {
+  background: #3e5fa8;
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  text-align: center;
+}
 /* Player names and payment status section */
 #player-payment-section {
   display: flex;
