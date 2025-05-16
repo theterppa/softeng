@@ -65,7 +65,7 @@ function loadPlans() {
         // Append the buttons to the list item
         li.appendChild(editButton);
         li.appendChild(deleteButton);
-        
+
         li.addEventListener("click", () => {
             // Redirect to detail view with the plan index
             window.location.href = `pages/details.html?planId=${index}`;
@@ -142,3 +142,55 @@ function editPlan(index) {
 
 // Load plans on page load
 document.addEventListener("DOMContentLoaded", loadPlans);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // 检查登录状态
+    const userData = localStorage.getItem("currentUser");
+    if (!userData) {
+        window.location.href = "pages/login.html";
+        return;
+    }
+
+    const currentUser = JSON.parse(userData);
+
+    // 获取DOM元素
+    const userInfoBtn = document.getElementById("userInfoBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const modal = document.getElementById("userInfoModal");
+    const span = document.getElementsByClassName("close")[0];
+    const userInfoContent = document.getElementById("userInfoContent");
+
+    // 显示用户信息
+    function showUserInfo() {
+        userInfoContent.innerHTML = `
+            <p><strong>UserName:</strong> ${currentUser.username}</p>
+            <p><strong>Team:</strong> ${currentUser.id}</p>
+            <p><strong>Role:</strong> ${currentUser.role}</p>
+            <p><strong>Email:</strong> ${currentUser.email}</p>
+            <p><strong>LoginTime:</strong> ${new Date(currentUser.loginTime).toLocaleString()}</p>
+        `;
+        modal.style.display = "block";
+    }
+
+    // 点击用户信息按钮
+    userInfoBtn.addEventListener("click", showUserInfo);
+
+    // 点击关闭按钮
+    span.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    // 点击模态框外部关闭
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // // 登出功能
+    // logoutBtn.addEventListener("click", function() {
+    //     localStorage.removeItem("currentUser");
+    //     window.location.href = "pages/login.html";
+    // });
+});
