@@ -13,6 +13,28 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    // show the information of the tournament
+    document.getElementById("tournament-title").textContent = plan.title;
+    document.getElementById("tournament-date").textContent = `Date: ${plan.date}`;
+    document.getElementById("tournament-player-count").textContent = `Players: ${plan.players.length}`;
+    document.getElementById("tournament-game-mode").textContent = `Game Mode: ${plan.gameMode}`;
+    document.getElementById("detail-missing-info").innerHTML = getPlanWarnings(plan).join(" ");
+
+    // Refresh plans function for the editing modal
+    window.refreshPlans = function() {
+
+    // Reload the plan from localStorage and update the view
+    const plans = JSON.parse(localStorage.getItem("tournamentPlans")) || [];
+    const plan = plans[planId];
+    //Update tournament info
+    document.getElementById("tournament-title").textContent = plan.title;
+    document.getElementById("tournament-date").textContent = `Date: ${plan.date}`;
+    document.getElementById("tournament-player-count").textContent = `Players: ${plan.players.length}`;
+    document.getElementById("tournament-game-mode").textContent = `Game Mode: ${plan.gameMode}`;
+    
+    //Update warning labels
+    document.getElementById("detail-missing-info").innerHTML = getPlanWarnings(plan).join(" ");
+
     // Add paymentStatus array to plan if not present
     if (!plan.paymentStatus || plan.paymentStatus.length !== plan.players.length) {
         plan.paymentStatus = Array(plan.players.length).fill("Unpaid");
@@ -71,9 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
             plans[planId] = plan;
             localStorage.setItem("tournamentPlans", JSON.stringify(plans));
         }
+    });
+  }
+      document.getElementById("edit-tournament-btn").addEventListener("click", () => {
+        openEditModal(planId);
       });
       // Back to Plans event listener
       document.getElementById("back-button").addEventListener("click", () => {
-      window.location.href = "../index.html";
+        window.location.href = "../index.html";
       });
 });
