@@ -435,6 +435,33 @@ footer {
     background: #3e5fa8;
 }
 
+/* Sticky footer buttons container */
+#sticky-footer-buttons {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2.5vw 1.2rem 2.5vw;
+  z-index: 2000;
+}
+
+#sticky-footer-buttons .left-buttons {
+  display: flex;
+  gap: 1rem;
+}
+#sticky-footer-buttons .right-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+#sticky-footer-buttons button {
+  margin: 0;
+}
+
+
 
 
 
