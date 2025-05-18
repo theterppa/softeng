@@ -1,76 +1,99 @@
-/* Main page styling */
-
 body {
-    background-color: #f4f4f9;
+    background: #507bc6;
     margin: 0;
-    font-family: Poppins, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #3067be 0%, #3067be 100%);
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    color: #f9c74f;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.user-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .tournament-container,
 .own-plans-container {
     width: 90%;
-    max-width: 600px;
+    max-width: 700px;
     margin: 20px auto;
 }
 
 .tournament-container {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #3e5fa8;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
     text-align: center;
-    box-sizing: border-box;
 }
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
 
 .tournament-container h1 {
-    margin-bottom: 20px;
+    color: #ffd54f;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 form label {
     display: block;
-    margin: 10px 0 5px;
+    margin: 1rem 0 0.3rem 0;
     text-align: left;
-}
-
-form textarea {
-    width: 100%;
-    max-width: 100%;
-    min-height: 70px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    resize: vertical;
+    color: #ffd54f;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 form input,
 form select,
-form textarea,
-form button {
+form textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: 0.7rem 1rem;
+    border-radius: 7px;
+    border: none;
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+    background: #22335a;
+    color: #fff;
+    outline: none;
+    box-sizing: border-box;
+}
+
+form textarea {
+    min-height: 60px;
+    resize: vertical;
 }
 
 form button {
-    background-color: #007BFF;
-    color: white;
+    background: #ffd54f;
+    color: #22335a;
     border: none;
+    border-radius: 7px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s;
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background: #ffe082;
 }
 
 .output-container {
@@ -78,23 +101,19 @@ form button:hover {
     text-align: left;
 }
 
-.output-container ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.output-container ul li {
-    margin: 5px 0;
-}
-
 .own-plans-container {
     margin-top: 40px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-top: #007BFF 4px solid;
+    padding: 2rem 1.5rem;
+    background: #22335a;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.own-plans-container h2 {
+    color: #ffd54f;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
 .own-plans-container ul {
@@ -103,21 +122,19 @@ form button:hover {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    /* Spacing between plans */
 }
 
 .own-plans-container li {
-    background-color: #ffffff;
-    padding: 20px;
+    background: #3e5fa8;
+    padding: 1.2rem 1rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
-    flex-direction: row;
-    gap: 8px;
-    /* Spacing between title and details */
+    align-items: center;
+    gap: 10px;
     position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .own-plans-container li:hover {
@@ -126,23 +143,22 @@ form button:hover {
 }
 
 .plan-title {
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: #007BFF;
-    margin: 0;
+    color: #ffd54f;
+    margin-right: 1rem;
 }
 
 .plan-meta {
-    font-size: 12px;
-    color: #6c757d;
-
+    font-size: 1rem;
+    color: #e0e0e0;
 }
 
 .missing-info {
     background-color: #f8d7da;
     color: #721c24;
     font-weight: bold;
-    font-size: 0.9em;
+    font-size: 0.95em;
     padding: 5px 10px;
     border-radius: 12px;
     border: 1px solid #f5c6cb;
@@ -152,122 +168,99 @@ form button:hover {
 
 .empty-state {
     text-align: center;
-    color: #666;
+    color: #ffd54f;
     font-size: 1em;
     font-style: italic;
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px dashed #ccc;
+    background-color: #22335a;
+    border: 1px dashed #ffd54f;
     border-radius: 8px;
 }
 
-
 .delete-plan-button {
-    background-color: #dc3545;
-    color: white;
+    background: #ffd54f;
+    color: #22335a;
     border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 6px 16px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 12px;
-    transition: background-color 0.3s ease;
-}
-
-.delete-plan-button:hover {
-    background-color: #c82333;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.2s;
 }
 
 .edit-plan-button {
-    background-color: #ffc107;
-    color: white;
+    background: #ffd54f;
+    color: #22335a;
     border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 6px 16px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 1rem;
     margin-left: auto;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: background 0.2s;
 }
 
+.delete-plan-button:hover{
+    background: rgb(252, 110, 110);
+}
+
+
 .edit-plan-button:hover {
-    background-color: #e0a800;
+    background: #ffe082;
 }
 
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Black background with opacity */
+    width: 100vw;
+    height: 100vh;
+    background: rgba(40, 60, 100, 0.55);
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #2d4379;
+    color: #fff;
+    border-radius: 18px;
+    padding: 2rem 2.5rem 1.5rem 2.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    min-width: 320px;
+    max-width: 95vw;
+    width: 400px;
+    position: relative;
+    margin: auto;
+    animation: modalFadeIn 0.2s;
+}
+
+@keyframes modalFadeIn {
+    from { transform: translateY(30px) scale(0.98); opacity: 0; }
+    to   { transform: translateY(0) scale(1); opacity: 1; }
 }
 
 .close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: #000;
-    text-decoration: none;
-}
-
-/* 用户控制区域样式 */
-.user-controls {
     position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-/* 模态框样式 */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    max-width: 400px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    top: 18px;
+    right: 22px;
+    font-size: 1.7rem;
+    color: #ffd54f;
     cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+.close-button:hover {
+    color: #fff176;
 }
 
-.close:hover {
-    color: black;
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #11274a;
+    margin-top: 3rem;
+    color: #a8c6ff;
 }

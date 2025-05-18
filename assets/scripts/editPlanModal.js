@@ -64,9 +64,7 @@ editForm.addEventListener("submit", function (event) {
 
   
    // Optionally: call a callback to refresh the view
-    if (typeof window.refreshPlans === "function") window.refreshPlans();
-    
-    closeModal();
+    window.location.reload();
 });
 
 // Close the modal when the close button is clicked
