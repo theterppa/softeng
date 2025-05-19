@@ -267,3 +267,4 @@ document.addEventListener("DOMContentLoaded", () => {
     const bracket = generateBracket(plan.players, plan.fields || 2, planId);
     chartPlaceholder.appendChild(bracket);
 });
+window.generateBracket = generateBracket;

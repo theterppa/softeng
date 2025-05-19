@@ -79,35 +79,22 @@
         <label><input type="checkbox" name="includePlayerPaymentStatus"> Payment Status</label><br>
         <label><input type="checkbox" name="includePlayerNames"> Player Names</label><br>
         <label><input type="checkbox" name="includeSchedule"> Schedule</label><br>
-        <a href="#" id="select-all">Select All</a> | <a href="#" id="clear-all">Clear</a>
+        <a href="#" id="select-all">Select All</a> | <a href="#" id="clear-all">Clear all</a>
       </form>
     </div>
     <!-- Live Preview -->
     <div class="preview-thumbnail">
-      <h3>Preview</h3>
-      <div id="live-preview">[Live Preview Placeholder]</div>
+      <h3> Print Preview</h3>
+      <div id="live-preview" class="print-area"></div>
     </div>
 
     <div class="footer-actions">
-      <button id="confirm-print-export">Next</button>
+      <button id="confirm-print-export">Print</button>
       <button id="cancel-print-export">Cancel</button>
     </div>
   </div>
 </div>
  
-  <!-- Modal for Print Preview -->
-<div id="print-preview-modal" class="modal">
-  <div class="modal-content">
-    <h2>Print Preview</h2>
-    <div id="print-preview-content">
-      <!-- Dynamically generated preview content will go here -->
-    </div>
-    <div class="footer-actions">
-      <button id="print-now-btn">Print</button>
-      <button id="close-preview-btn">Close</button>
-    </div>
-  </div>
-</div> 
 
 <!-- Edit plan modal  -->
 <div id="edit-modal" class="modal">
@@ -143,9 +130,9 @@
   </footer>
 
   <script src="../assets/scripts/warningLabels.js"></script>
-  <script src="../assets/scripts/printExport.js"></script>
   <script src="../assets/scripts/chart.js"></script>
   <script src="../assets/scripts/editPlanModal.js"></script>
+  <script src="../assets/scripts/printExport.js"></script>
   <script src="../assets/scripts/details.js"></script>
 
 </body>
