@@ -81,31 +81,82 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // Generate live preview and print content
     function generateContentHTML(formData) {
-        let content = "";
-        if (formData.has("includeTitle")) {
-            content += `<h1>${document.getElementById("tournament-title").textContent}</h1>`;
+    const urlParams = new URLSearchParams(window.location.search);
+    const planId = parseInt(urlParams.get("planId"), 10);
+    const plans = JSON.parse(localStorage.getItem("tournamentPlans")) || [];
+    const plan = plans[planId];
+
+    let content = "";
+
+    if (!plan) {
+        return "<p>Plan not found.</p>";
+    }
+
+    // Title
+    if (formData.has("includeTitle")) {
+        content += `<h1>${plan.title}</h1>`;
+    }
+
+    // Meta info (date, player count, game mode)
+    let meta = [];
+    if (formData.has("includeDate")) meta.push(`Date: ${plan.date}`);
+    if (formData.has("includePlayerCount")) meta.push(`Players: ${plan.players.length}`);
+    if (formData.has("includeGameMode")) meta.push(`Game Mode: ${plan.gameMode}`);
+    if (meta.length) content += `<div style="margin-bottom:1em;"><strong>${meta.join(" | ")}</strong></div>`;
+
+    // Warning labels (optional)
+    if (formData.has("includeWarnings") && typeof getPlanWarnings === "function") {
+        content += getPlanWarnings(plan).join(" ");
+    }
+
+    // Tournament chart
+    if (formData.has("includeChart")) {
+        if (window.generateBracket && typeof window.generateBracket === "function") {
+            const bracketNode = window.generateBracket(plan.players, plan.fields || 2, planId);
+            const tempDiv = document.createElement("div");
+            tempDiv.appendChild(bracketNode);
+            content += tempDiv.innerHTML;
+        } else {
+            content += `<div id="print-chart">[Tournament Chart Not Available]</div>`;
         }
-        if (formData.has("includeDate")) {
-            content += `<p>${document.getElementById("tournament-date").textContent}</p>`;
-        }
-        if (formData.has("includeChart")) {
-            content += `<p>[Tournament Chart Placeholder]</p>`;
-        }
-        if (formData.has("includePlayerPaymentStatus")) {
-            content += `<p>[Player Payment Status Placeholder]</p>`;
-        }
-        if (formData.has("includeSchedule")) {
-            content += `<p>[Schedule Placeholder]</p>`;
-        }
-        if (formData.has("includePlayerNames")) { // Ensure Player Names are included
-        content += `<ul>`;
-        document.querySelectorAll("#tournament-players li").forEach((player) => {
-            content += `<li>${player.textContent}</li>`;
+    }
+
+    // Player/payment table
+    if (formData.has("includePlayerPaymentStatus")) {
+        content += `<h3>Players & Payment Status</h3>
+        <table style="width:100%;border-collapse:collapse;border:1px solid #000;">
+            <thead>
+                <tr>
+                    <th style="border:1px solid #000;">Player</th>
+                    <th style="border:1px solid #000;">Status</th>
+                </tr>
+            </thead>
+            <tbody>`;
+        plan.players.forEach((player, idx) => {
+            const status = plan.paymentStatus && plan.paymentStatus[idx] ? plan.paymentStatus[idx] : "Unpaid";
+            content += `<tr>
+                <td style="border:1px solid #000;">${player}</td>
+                <td style="border:1px solid #000;">${status}</td>
+            </tr>`;
+        });
+        content += `</tbody></table>`;
+    }
+
+    // Player names
+    if (formData.has("includePlayerNames")) {
+        content += `<h3>Players</h3><ul>`;
+        plan.players.forEach(player => {
+            content += `<li>${player}</li>`;
         });
         content += `</ul>`;
     }
+
+    // Schedule (if you have it)
+    if (formData.has("includeSchedule")) {
+        content += `<div>[Schedule Placeholder]</div>`;
+    }
+
     return content;
     }
 
@@ -132,26 +183,11 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Generate print preview content
-        const contentHTML = generateContentHTML(formData);
-
-        // Close the info selection modal
-        closeinfoModal();
-
-        // Show the print preview modal
-        previewContent.innerHTML = contentHTML;
-        previewModal.classList.add("visible");
-        previewModal.setAttribute("aria-hidden", "false");
-        previewModal.focus();
-    });
-    // Handle "Print" button in the preview modal
-    printNowBtn.addEventListener("click", () => {
+        // Update the live preview with the latest content
+        generateLivePreview();
+    
         window.print();
     });
 
-    // Handle "Close" button in the preview modal
-    closePreviewBtn.addEventListener("click", () => {
-        previewModal.classList.remove("visible");
-        previewModal.setAttribute("aria-hidden", "true");
-    });
+
 });      
